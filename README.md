@@ -1,4 +1,4 @@
-# abusexml
+# xmlabuse
 
 Ebben a repository-ban olyan tesztfájlokat próbálok összeállítani, amelyek egy XML-t fogadni képes betöltő rendszer teszteléséhez szeretnénk felhasználni egy projekten.
 
