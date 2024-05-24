@@ -45,4 +45,4 @@ fájlok:
 ### összegzés
 
 A fájlok összeállításakor és ezek egyenkénti tesztelésekor a következőket tapasztaltam:
-- a víruskereső nem ismeri fel az EICAR tartalmat, ha ezt XML struktúrán belülre rakjuk (pl <script>-ként vagy a header alá)
+- a víruskereső nem ismeri fel az EICAR tartalmat, ha ezt XML struktúrán belülre rakjuk, viszont szimplán xml-re átnevezve már "elkapja";
