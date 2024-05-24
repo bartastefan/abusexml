@@ -2,25 +2,45 @@
 
 Ebben a repository-ban olyan tesztfájlokat próbálok összeállítani, amelyek egy XML-t fogadni képes betöltő rendszer teszteléséhez szeretnénk felhasználni egy projekten.
 
-- A víruskereső triggerelésére a kiindulási alapot az EICAR oldaláról letölthető txt tesztfájl képezi (https://www.eicar.org/download-anti-malware-testfile/).
+---
+
+- A víruskereső triggerelése
+
+A kiindulási alapot az [EICAR oldaláról letölthető txt tesztfájl](https://www.eicar.org/download-anti-malware-testfile/) képezi.
 A txt fájlt a víruskereső "virus - Eicar-Test-Signature" néven ismeri fel.
 
 Cél: olyan tartalmú XML állományok összeállítása, melyek egy backend víruskeresője felismer.
 
-#TODO: fájlok megnevezése feltöltés után
+fájlok:
 
-- Invalid XML-eknél a hibás, lezáratlan formátumon kívül az XML parser gyengeségeit kihasználó, 
+- [x] eicar.txt - az EICAR oldaláról letöltött ártalmatlan próbavírus kódját tartalmazza
+- [ ] teszt vírust tartalmazó xml állomány
 
-- Szolgáltatásmegtagadást (DoS) eredményezhető problémát okozó "Billion laughs attack" (https://en.wikipedia.org/wiki/Billion_laughs_attack) tartalmat,
+---
 
-- XXE típusú támadásokat (https://en.wikipedia.org/wiki/XML_external_entity_attack) előidéző fájlok.
+- Az XML parser gyengeségeit kihasználó támadások szimulálása
 
-Cél: olyan invalid, vagy a betöltés mechanizmusát megaksztó, akár script-eket tartalmazó XML állományok összeállítása, melyek egy backend-nél problémát okozhatnak, ezek a rendszerben megfelelően legyenek kezelve, hogy ne történhessen visszaélés.
+Szolgáltatásmegtagadást (DoS) eredményezhető problémát okozó ["Billion laughs attack"](https://en.wikipedia.org/wiki/Billion_laughs_attack) tartalmat,
+[XXE típusú támadásokat](https://en.wikipedia.org/wiki/XML_external_entity_attack) előidéző fájlok.
 
-#TODO: fájlok megnevezése feltöltés után
+Cél: Az XML parser gyengeségeit kihasználó támadások szimulálása, a betöltés mechanizmusát megakasztó, akár script-eket tartalmazó XML állományok összeállítása, melyek egy backend-nél jogosulatlan hozzáférést vagy egyéb problémát okozhatnak, ezek megfelelő kezelésének ellenőrzése.
 
-- API POST request tartalmú XML-ek betöltése akár a feltöltő rendszerbe fájlként, akár később a kérést a végpontokra megfelelően beállítás után API hívásként felhasználva (a tesztelendő rendszeren jelenleg a JSON még nem scope).
+Megelőzés: [OWASP XML External Entity Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html)
 
-Cél: betöltéskor tartalmilag invalid fájlok (szintaktikailag helyesek) ellenőrzése,  hogy a rendszer hogyan kezeli.
+fájlok:
 
-#TODO: fájlok megnevezése feltöltés után
+- [x] bla-basic.xml - BillionLaughsAttack a Wiki oldalon található kód minta
+- [x] OWASP-template_accessing_local_resource.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [x] OWASP-template_PHP_remote_code_exec.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ]
+- [ ]
+
+---
+
+- Nem megfelelően formázott XML-ek (pl lezáratlan).
+Cél: Egyéb invalid, fájlok kezelésének ellenőrzése.
+
+fájlok:
+- [ ] hibásan formázott XML
+- [ ] API POST tartalom (de szintaktikailag helyes XML)
+
