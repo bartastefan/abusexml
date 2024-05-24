@@ -37,10 +37,9 @@ fájlok:
 - [x] templates/bla-basic.xml - BillionLaughsAttack a Wiki oldalon található kód minta
 - [x] templates/OWASP-template_accessing_local_resource.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
 - [x] templates/OWASP-template_PHP_remote_code_exec.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [x] templates/OWASP-template_disclose1.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [x] templates/OWASP-template_disclose2.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ] xmltestfiles/
 
 ### összegzés
 
