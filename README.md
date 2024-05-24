@@ -2,9 +2,7 @@
 
 Ebben a repository-ban olyan tesztfájlokat próbálok összeállítani, amelyek egy XML-t fogadni képes betöltő rendszer teszteléséhez szeretnénk felhasználni egy projekten.
 
----
-
-- A víruskereső triggerelése
+#### A víruskereső triggerelése
 
 A kiindulási alapot az [EICAR oldaláról letölthető txt tesztfájl](https://www.eicar.org/download-anti-malware-testfile/) képezi.
 A txt fájlt a víruskereső "virus - Eicar-Test-Signature" néven ismeri fel.
@@ -13,12 +11,19 @@ Cél: olyan tartalmú XML állományok összeállítása, melyek egy backend ví
 
 fájlok:
 
-- [x] eicar.txt - az EICAR oldaláról letöltött ártalmatlan próbavírus kódját tartalmazza
-- [ ] teszt vírust tartalmazó xml állomány
+- [x] templates/eicar.txt - az EICAR oldaláról letöltött ártalmatlan próbavírus kódját tartalmazza
+- [x] xmltestfiles/eicar.xml -az EICAR eredeti kódja, a txt helyett szimplán XML kiterjesztéssel 
+- [x] xmltestfiles/eicar-script.xml - EICAR teszt vírust <script>-ként tartalmazó xml állomány
+- [x] xmltestfiles/eicar-xml.xml - EICAR teszt vírust, az XML struktúrán belül tartalmazó xml állomány
 
----
+#### Formázási hibák, invalid tartalom.
+Cél: Egyéb invalid, fájlok kezelésének ellenőrzése.
 
-- Az XML parser gyengeségeit kihasználó támadások szimulálása
+fájlok:
+- [ ] hibásan formázott XML
+- [ ] API POST tartalom (de szintaktikailag helyes XML)
+
+#### Az XML parser gyengeségeit kihasználó támadások szimulálása
 
 Szolgáltatásmegtagadást (DoS) eredményezhető problémát okozó ["Billion laughs attack"](https://en.wikipedia.org/wiki/Billion_laughs_attack) tartalmat,
 [XXE típusú támadásokat](https://en.wikipedia.org/wiki/XML_external_entity_attack) előidéző fájlok.
@@ -29,18 +34,15 @@ Megelőzés: [OWASP XML External Entity Prevention Cheat Sheet](https://cheatshe
 
 fájlok:
 
-- [x] bla-basic.xml - BillionLaughsAttack a Wiki oldalon található kód minta
-- [x] OWASP-template_accessing_local_resource.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [x] OWASP-template_PHP_remote_code_exec.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [ ]
-- [ ]
+- [x] templates/bla-basic.xml - BillionLaughsAttack a Wiki oldalon található kód minta
+- [x] templates/OWASP-template_accessing_local_resource.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [x] templates/OWASP-template_PHP_remote_code_exec.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
+- [ ] templates/  - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
 
----
+### összegzés
 
-- Nem megfelelően formázott XML-ek (pl lezáratlan).
-Cél: Egyéb invalid, fájlok kezelésének ellenőrzése.
-
-fájlok:
-- [ ] hibásan formázott XML
-- [ ] API POST tartalom (de szintaktikailag helyes XML)
-
+A fájlok összeállításakor és ezek egyenkénti tesztelésekor a következőket tapasztaltam:
+- a víruskereső nem ismeri fel az EICAR tartalmat, ha ezt XML struktúrán belülre rakjuk (pl <script>-ként vagy a header alá)
