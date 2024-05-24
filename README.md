@@ -39,7 +39,7 @@ fájlok:
 - [x] templates/OWASP-template_PHP_remote_code_exec.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
 - [x] templates/OWASP-template_disclose1.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
 - [x] templates/OWASP-template_disclose2.xml - [OWASP](https://en.wikipedia.org/wiki/OWASP) xml injection minta
-- [x] xmltestfiles/bla-lolz.xml - bla-basic-ból tesztfájl
+- [x] xmltestfiles/bla-lolz.xml - bla-basic-ból tesztfájl (script: document.csrfForm.submit)
 
 ### összegzés
 
